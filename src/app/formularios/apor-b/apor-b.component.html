@@ -1,0 +1,19 @@
+<h2>A POR B</h2>
+
+<form [formGroup]="formulario" (ngSubmit)="calcular()">
+  <label for="A">A:</label><br>
+  <input id="A" type="number" formControlName="A" style="width: 200px;"><br><br>
+
+  <label for="B">B:</label><br>
+  <input id="B" type="number" formControlName="B" style="width: 200px;"><br><br>
+
+  <button type="submit">CALCULAR</button>
+</form>
+
+<br>
+
+<p>
+  <strong>RESULTADO = </strong> {{ resultado }}
+  <br>
+  <strong>DETALLE:</strong> {{ objDistancia.cantidad }}
+</p>

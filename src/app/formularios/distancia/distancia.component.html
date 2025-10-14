@@ -1,0 +1,39 @@
+<h2>PRACTICA EXTRA</h2>
+
+<p>
+  Para el siguiente problema se te pide encontrar la distancia entre dos puntos según el ejemplo que se te proporciona:
+</p>
+
+<pre>
+FÓRMULA DE LA DISTANCIA = √((X₂ - X₁)² + (Y₂ - Y₁)²)
+√((5 - (-4))² + (-2 - 3)²)
+√(9² + (-5)²)
+√(81 + 25)
+√106 ≈ 10.30
+</pre>
+
+<h2>DISTANCIA ENTRE DOS PUNTOS</h2>
+
+<form [formGroup]="formulario" (ngSubmit)="calcular()">
+
+  <label for="X2">X₂:</label><br>
+  <input id="X2" type="number" formControlName="X2" style="width: 200px;"><br><br>
+
+  <label for="X1">X₁:</label><br>
+  <input id="X1" type="number" formControlName="X1" style="width: 200px;"><br><br>
+
+  <label for="Y2">Y₂:</label><br>
+  <input id="Y2" type="number" formControlName="Y2" style="width: 200px;"><br><br>
+  
+  <label for="Y1">Y₁:</label><br>
+  <input id="Y1" type="number" formControlName="Y1" style="width: 200px;"><br><br>
+
+
+  <button type="submit">CALCULAR</button>
+</form>
+
+<br>
+
+<p *ngIf="resultado !== undefined">
+  <strong>La distancia es de:</strong> {{ resultado | number:'1.2-2' }}
+</p>
