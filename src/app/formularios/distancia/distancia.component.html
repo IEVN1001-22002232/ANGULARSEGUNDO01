@@ -1,10 +1,10 @@
-<h2>PRACTICA EXTRA</h2>
+<h2 class="text-2xl font-bold mb-4">PRACTICA EXTRA</h2>
 
-<p>
+<p class="mb-4">
   Para el siguiente problema se te pide encontrar la distancia entre dos puntos según el ejemplo que se te proporciona:
 </p>
 
-<pre>
+<pre class="bg-gray-100 p-4 rounded-lg mb-6">
 FÓRMULA DE LA DISTANCIA = √((X₂ - X₁)² + (Y₂ - Y₁)²)
 √((5 - (-4))² + (-2 - 3)²)
 √(9² + (-5)²)
@@ -12,28 +12,42 @@ FÓRMULA DE LA DISTANCIA = √((X₂ - X₁)² + (Y₂ - Y₁)²)
 √106 ≈ 10.30
 </pre>
 
-<h2>DISTANCIA ENTRE DOS PUNTOS</h2>
+<h2 class="text-2xl font-bold mb-4">DISTANCIA ENTRE DOS PUNTOS</h2>
 
-<form [formGroup]="formulario" (ngSubmit)="calcular()">
+<form [formGroup]="formulario" (ngSubmit)="calcular()" class="max-w-md mx-auto bg-white p-6 rounded-lg shadow-md">
 
-  <label for="X2">X₂:</label><br>
-  <input id="X2" type="number" formControlName="X2" style="width: 200px;"><br><br>
+  <div class="mb-5">
+    <label for="X2" class="block mb-2 text-sm font-medium text-gray-900 dark:text-black">X₂:</label>
+    <input id="X2" type="number" formControlName="X2" 
+           class="block w-full p-3 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-base focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+  </div>
 
-  <label for="X1">X₁:</label><br>
-  <input id="X1" type="number" formControlName="X1" style="width: 200px;"><br><br>
+  <div class="mb-5">
+    <label for="X1" class="block mb-2 text-sm font-medium text-gray-900 dark:text-black">X₁:</label>
+    <input id="X1" type="number" formControlName="X1" 
+           class="block w-full p-3 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-base focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+  </div>
 
-  <label for="Y2">Y₂:</label><br>
-  <input id="Y2" type="number" formControlName="Y2" style="width: 200px;"><br><br>
-  
-  <label for="Y1">Y₁:</label><br>
-  <input id="Y1" type="number" formControlName="Y1" style="width: 200px;"><br><br>
+  <div class="mb-5">
+    <label for="Y2" class="block mb-2 text-sm font-medium text-black">Y₂:</label>
+    <input id="Y2" type="number" formControlName="Y2" 
+           class="block w-full p-3 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-base focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+  </div>
 
+  <div class="mb-5">
+    <label for="Y1" class="block mb-2 text-sm font-medium text-black">Y₁:</label>
+    <input id="Y1" type="number" formControlName="Y1" 
+           class="block w-full p-3 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-base focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+  </div>
 
-  <button type="submit">CALCULAR</button>
+  <button type="submit" 
+          class="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 rounded-lg transition-colors">
+    CALCULAR
+  </button>
 </form>
 
 <br>
 
-<p *ngIf="resultado !== undefined">
+<p *ngIf="resultado !== undefined" class="text-center text-lg font-semibold mt-4">
   <strong>La distancia es de:</strong> {{ resultado | number:'1.2-2' }}
 </p>

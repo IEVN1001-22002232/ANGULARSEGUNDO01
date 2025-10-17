@@ -1,0 +1,114 @@
+<h2 class="text-2xl font-bold mb-4 text-center">HORÓSCOPO CHINO</h2>
+
+<form [formGroup]="formulario" (ngSubmit)="imprimir()" class="max-w-md mx-auto bg-white p-6 rounded-lg shadow-md">
+
+  <div class="relative z-0 w-full mb-5 group">
+    <input type="text" id="nombre" formControlName="nombre"
+      class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0
+      border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0
+      focus:border-blue-600 peer" placeholder=" " required />
+    <label for="nombre" class="peer-focus:font-medium absolute text-sm text-gray-500
+      duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0]
+      peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0
+      peer-focus:scale-75 peer-focus:-translate-y-6">
+      Nombre
+    </label>
+  </div>
+
+  <div class="relative z-0 w-full mb-5 group">
+    <input type="text" id="paterno" formControlName="paterno"
+      class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0
+      border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0
+      focus:border-blue-600 peer" placeholder=" " required />
+    <label for="paterno" class="peer-focus:font-medium absolute text-sm text-gray-500
+      duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0]
+      peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0
+      peer-focus:scale-75 peer-focus:-translate-y-6">
+      Apellido PATERNO
+    </label>
+  </div>
+
+  <div class="relative z-0 w-full mb-5 group">
+    <input type="text" id="Materno" formControlName="Materno"
+      class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0
+      border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0
+      focus:border-blue-600 peer" placeholder=" " required />
+    <label for="Materno" class="peer-focus:font-medium absolute text-sm text-gray-500
+      duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0]
+      peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0
+      peer-focus:scale-75 peer-focus:-translate-y-6">
+      Apellido MATERNO
+    </label>
+  </div>
+
+  <div class="grid md:grid-cols-3 md:gap-4">
+    <div class="relative z-0 w-full mb-5 group">
+      <input type="number" id="dia" formControlName="dia" placeholder=" "
+        class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0
+        border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0
+        focus:border-blue-600 peer" required />
+      <label for="dia" class="peer-focus:font-medium absolute text-sm text-gray-500
+        duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0]
+        peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0
+        peer-focus:scale-75 peer-focus:-translate-y-6">
+        Día
+      </label>
+    </div>
+
+    <div class="relative z-0 w-full mb-5 group">
+      <input type="number" id="mes" formControlName="mes" placeholder=" "
+        class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0
+        border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0
+        focus:border-blue-600 peer" required />
+      <label for="mes" class="peer-focus:font-medium absolute text-sm text-gray-500
+        duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0]
+        peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0
+        peer-focus:scale-75 peer-focus:-translate-y-6">
+        Mes
+      </label>
+    </div>
+
+    <div class="relative z-0 w-full mb-5 group">
+      <input type="number" id="anio" formControlName="anio" placeholder=" "
+        class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0
+        border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0
+        focus:border-blue-600 peer" required />
+      <label for="anio" class="peer-focus:font-medium absolute text-sm text-gray-500
+        duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0]
+        peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0
+        peer-focus:scale-75 peer-focus:-translate-y-6">
+        Año
+      </label>
+    </div>
+  </div>
+
+  <div class="mb-4">
+    <p class="text-sm font-medium text-gray-700 mb-2">Sexo:</p>
+    <div class="flex gap-6">
+      <label class="flex items-center">
+        <input type="radio" formControlName="sexo" value="Masculino" class="text-blue-600">
+        <span class="ml-2">Masculino</span>
+      </label>
+      <label class="flex items-center">
+        <input type="radio" formControlName="sexo" value="Femenino" class="text-blue-600">
+        <span class="ml-2">Femenino</span>
+      </label>
+    </div>
+  </div>
+
+  <button type="submit"
+    class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none
+    focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
+    CLICK PARA VER TU RESULTADO
+  </button>
+</form>
+
+<div class="text-center mt-6">
+  <p class="text-lg font-semibold mb-2">NOMBRE: {{ persona.nombre }}</p>
+  <p class="text-lg font-semibold mb-2">APELLIDO PATERNO: {{ persona.paterno }}</p>
+  <p class="text-lg font-semibold mb-2">APELLIDO MATERNO: {{ persona.Materno }}</p>
+  <p>EDAD: {{ persona.edad }} años</p>
+  <p>SEXO: {{ persona.sexo }}</p>
+  <p>TU SIGNO DEL HORÓSCOPO CHINO ES: <strong>{{ persona.cual }}</strong></p>
+  <img [src]="persona.imagen" alt="Signo" class="mx-auto mt-3 w-32 h-32 object-contain rounded-lg shadow">
+</div>
